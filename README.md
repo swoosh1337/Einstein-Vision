@@ -1,6 +1,6 @@
 # Einstein Vision - Checkpoint 1 Submission
 
-This repository contains the code and data for Checkpoint 1 submission of the RBE 549: Computer Vision project, Einstein Vision, completed by Deepak Nagle and Irakli Gregolia. The goal of this project is to implement various computer vision techniques to detect and analyze the environment around a moving car. 
+This repository contains the code and data for the RBE 549: Computer Vision project, Einstein Vision, completed by Irakli Grigolia and Tupak Nagle. The goal of this project is to implement various computer vision techniques to detect and analyze the environment around a moving car. 
 
 ## Networks Utilized
 
@@ -12,9 +12,6 @@ The project utilizes the following networks:
 
 3. Lane Detection: YOLO Pv2 from [CAIC-AD/YOLOPv2](https://github.com/CAIC-AD/YOLOPv2) is used to detect lanes in the scene.
 
-## Issues Faced
-
-While all 6 classes were detected successfully, the team was not able to project the "Speed_Limit_blank_sign.svg" image on the rendered speed limit sign due to conversion issues. However, all 6 classes were rendered successfully.
 
 ## References
 
@@ -29,4 +26,3 @@ The repository also includes references to other object detection and keypoint d
 - YOLO 3-D bounding boxes: [ruhyadi/YOLO3D](https://github.com/ruhyadi/YOLO3D)
 - Pedestrian keypoint detection: [ZheC/Realtime MultiPerson Pose Estimation](https://github.com/ZheC/Realtime-Multi-Person-Pose-Estimation) 
 
-Thank you!
