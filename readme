@@ -1,41 +1,32 @@
-RBE 549: Computer Vision
-Team members: Deepak Nagle, Irakli Gregolia
-Project 3: Einstein Vision - Checkpoint 1 submission: Using one late day
- 
-Networks utilized:
-1. Object detection (cars, traffic signs, traffic lights, speed limit sign):
-We used this one for object detection: https://github.com/xiaogangLi/tensorflow-MobilenetV1-SSD
-We found midpoints of the cars, traffic signs, traffic lights using the bounding boxes obtained from this network by feeding it the images.
-However, next time, we plan on using instance/panoptic segmentation network in hopes that it will 
-provide better results for depth estimation (using average depth in the segmented part of the image)
+# Einstein Vision - Checkpoint 1 Submission
 
-2. Depth estimation:
-We used transformer based midas: https://github.com/jankais3r/Video-Depthify
-We took the bounding boxes from object detection and found average depths in the same regions as those
-of bounding boxes to obtain estimated depths. However, we expect to use instance segmentation instead of 
-object detection for better results.
+This repository contains the code and data for Checkpoint 1 submission of the RBE 549: Computer Vision project, Einstein Vision, completed by Deepak Nagle and Irakli Gregolia. The goal of this project is to implement various computer vision techniques to detect and analyze the environment around a moving car. 
 
-3. Lane detection:
-YOLO Pv2 : https://github.com/CAIC-AD/YOLOPv2
-Detected the lanes through this network.
+## Networks Utilized
 
-Note: We were able to detect all 6 classes, however, in case of the speed limit sign, we could detect it,
-we were able to place a speed limit sign of the rendering, but we could not project "Speed_Limit_blank_sign.svg"
-thing on that speed limit sign that we rendered. This was because the file was in .svg instead of .png and blender
-does not take .svg images. While converting it to .png, the image was getting distorted and there were a lot of issues. 
-This issue did not occur with the stop sign image as that was in .png format.
-However, we did render all the 6 classes. Just that in case of speed limit, we could not project the image text on the
-projected speed limit sign.
+The project utilizes the following networks:
+
+1. Object Detection (cars, traffic signs, traffic lights, speed limit sign): A TensorFlow-based object detection model from [xiaogangLi/tensorflow-MobilenetV1-SSD](https://github.com/xiaogangLi/tensorflow-MobilenetV1-SSD) is used to detect objects in the scene. The midpoints of the bounding boxes are used to identify the position of cars, traffic signs, and traffic lights. Instance/panoptic segmentation network is planned to be used for better depth estimation in future iterations.
+
+2. Depth Estimation: A transformer-based midas model from [jankais3r/Video-Depthify](https://github.com/jankais3r/Video-Depthify) is used to estimate the depth of the objects in the scene. The average depth is calculated within the region defined by the bounding boxes from object detection. Instance segmentation is planned to be used for better results in future iterations.
+
+3. Lane Detection: YOLO Pv2 from [CAIC-AD/YOLOPv2](https://github.com/CAIC-AD/YOLOPv2) is used to detect lanes in the scene.
+
+## Issues Faced
+
+While all 6 classes were detected successfully, the team was not able to project the "Speed_Limit_blank_sign.svg" image on the rendered speed limit sign due to conversion issues. However, all 6 classes were rendered successfully.
+
+## References
+
+The repository also includes references to other object detection and keypoint detection models utilized during the project.
+
+- Lane Detection: [IrohXu/lanenet-lane-detection-pytorch](https://github.com/IrohXu/lanenet-lane-detection-pytorch)
+- Monocular Depth Estimation: [isl-org/MiDaS](https://github.com/isl-org/MiDaS)
+- Object Detection: Cars, Trucks, Traffic Lights, Road Signs: [xiaogangLi/tensorflow-MobilenetV1-SSD](https://github.com/xiaogangLi/tensorflow-MobilenetV1-SSD)
+- Object Detection: Cars, Trucks, Traffic Lights, Road Signs: [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
+- Object Detection: Traffic Lights: [sovit-123/TrafficLight-Detection-Using-YOLOv3](https://github.com/sovit-123/TrafficLight-Detection-Using-YOLOv3)
+- Object Detection: Road Signs: [Anantmishra1729/Road-sign-detection](https://github.com/Anantmishra1729/Road-sign-detection)
+- YOLO 3-D bounding boxes: [ruhyadi/YOLO3D](https://github.com/ruhyadi/YOLO3D)
+- Pedestrian keypoint detection: [ZheC/Realtime MultiPerson Pose Estimation](https://github.com/ZheC/Realtime-Multi-Person-Pose-Estimation) 
 
 Thank you!
- 
-[2] Lane Detection: https://github.com/IrohXu/lanenet-lane-detection-pytorch
-[3] Monocular Depth Estimation: https://github.com/isl-org/MiDaS
-[4] Object Detection: Cars, Trucks, Traffic Lights, Road Signs:
-https://github.com/xiaogangLi/tensorflow-MobilenetV1-SSD
-[5] Object Detection: Cars, Trucks, Traffic Lights, Road Signs:
-https://github.com/WongKinYiu/yolov7
-[6] Object Detection: Traffic Lights: https://github.com/sovit-123/TrafficLight-Detection-Using-YOLOv3
-[7] Object Detection: Road Signs: https://github.com/Anantmishra1729/Road-sign-detection
-[8] YOLO 3-D bounding boxes: https://github.com/ruhyadi/YOLO3D
-[9] Pedestrian keypoint detection: https://github.com/ZheC/Realtime MultiPerson Pose Estimation
